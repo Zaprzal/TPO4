@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="openjms/antlr-2.7.2.jar"/>
+	<classpathentry kind="lib" path="openjms/castor-0.9.5.jar"/>
+	<classpathentry kind="lib" path="openjms/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="openjms/commons-collections-2.1.jar"/>
+	<classpathentry kind="lib" path="openjms/commons-dbcp-1.2.1.jar"/>
+	<classpathentry kind="lib" path="openjms/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="openjms/commons-pool-1.2.jar"/>
+	<classpathentry kind="lib" path="openjms/concurrent-1.3.4.jar"/>
+	<classpathentry kind="lib" path="openjms/derby-10.1.1.0.jar"/>
+	<classpathentry kind="lib" path="openjms/jdbc-2.0.jar"/>
+	<classpathentry kind="lib" path="openjms/jms-1.1.jar"/>
+	<classpathentry kind="lib" path="openjms/jndi-1.2.1.jar"/>
+	<classpathentry kind="lib" path="openjms/jta-1.0.1.jar"/>
+	<classpathentry kind="lib" path="openjms/log4j-1.2.11.jar"/>
+	<classpathentry kind="lib" path="openjms/openjms-0.7.7-beta-1.jar"/>
+	<classpathentry kind="lib" path="openjms/openjms-common-0.7.7-beta-1.jar"/>
+	<classpathentry kind="lib" path="openjms/openjms-net-0.7.7-beta-1.jar"/>
+	<classpathentry kind="lib" path="openjms/openjms-tools-0.7.7-beta-1.jar"/>
+	<classpathentry kind="lib" path="openjms/openjms-tunnel-0.7.7-beta-1.war"/>
+	<classpathentry kind="lib" path="openjms/oro-2.0.8.jar"/>
+	<classpathentry kind="lib" path="openjms/spice-jndikit-1.2.jar"/>
+	<classpathentry kind="lib" path="openjms/xerces-2.4.0.jar"/>
+	<classpathentry kind="lib" path="openjms/xml-apis-1.0.b2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
