@@ -34,9 +34,10 @@ public class Chat extends JFrame{
 	private Connection connection;
 	private Session session;
 	private Destination destination;
+	private String user;
 	
 	public Chat(String username) {
-			
+		this.user = username;
 		props.put(Context.INITIAL_CONTEXT_FACTORY, "org.exolab.jms.jndi.InitialContextFactory");
 	    props.put(Context.PROVIDER_URL, "tcp://localhost:3035/");
 	
@@ -45,7 +46,7 @@ public class Chat extends JFrame{
 			ConnectionFactory cf = (ConnectionFactory) context.lookup("ConnectionFactory");
 			connection = cf.createConnection();
 			session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-			destination = (Destination) context.lookup("chat");
+			destination = (Destination) context.lookup("topic1");
 		} catch (NamingException | JMSException e) {
 			System.out.println(e);
 		}
@@ -63,7 +64,7 @@ public class Chat extends JFrame{
 		JButton jb = new JButton("Wyœlij");
 		subPanel.add(jtf);
 		subPanel.add(jb);
-		mainPanel.add(subPanel, BorderLayout.SOUTH);
+		mainPanel.add(subPanel, BorderLayout.NORTH);
 		setPreferredSize(new Dimension(600, 600));
 		add(mainPanel);
 		pack();
@@ -93,7 +94,7 @@ public class Chat extends JFrame{
 	                try {
 	                	StringBuilder sb = new StringBuilder();
 	                	sb.append(jta.getText());
-	                	sb.append("User 1: " + text.getText());
+	                	sb.append(text.getText());
 						jta.setText(sb.toString() + "\n");
 					} catch (JMSException e) {
 						System.out.println(e);
@@ -111,7 +112,7 @@ public class Chat extends JFrame{
 		try {
 			connection.start();
 		    MessageProducer sender = session.createProducer(destination);
-		    TextMessage message = session.createTextMessage(mes);
+		    TextMessage message = session.createTextMessage(this.user+": "+mes);
 		    sender.send(message);
 		} catch (JMSException e1) {
 			System.out.println(e1);
